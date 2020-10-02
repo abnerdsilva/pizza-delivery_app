@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pizza_delivery_app/app/modules/auth/view/login_page.dart';
+import 'package:pizza_delivery_app/app/modules/home/view/home_page.dart';
+import 'package:pizza_delivery_app/app/modules/home/view/register_page.dart';
 import 'package:pizza_delivery_app/app/modules/splash/view/splash_page.dart';
 
 void main() {
@@ -11,10 +14,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primaryColor: Color(0xFF9d0000),
+        primarySwatch: Colors.red,
       ),
       initialRoute: SplashPage.router,
+      routes: {
+        SplashPage.router: (_) => SplashPage(),
+        HomePage.router: (_) => HomePage(),
+        LoginPage.router: (_) => LoginPage(),
+        // RegisterPage.router: (_) => RegisterPage(),
+      },
     );
   }
 }
