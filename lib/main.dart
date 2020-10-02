@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         SplashPage.router: (_) => SplashPage(),
         HomePage.router: (_) => HomePage(),
         LoginPage.router: (_) => LoginPage(),
-        // RegisterPage.router: (_) => RegisterPage(),
+        RegisterPage.router: (_) => RegisterPage(),
       },
     );
   }

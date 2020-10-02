@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:pizza_delivery_app/app/exceptions/rest_exception.dart';
 import 'package:pizza_delivery_app/app/models/user_model.dart';
+import 'package:pizza_delivery_app/app/modules/view_models/register_input_model.dart';
 
 class AuthRepository {
   Future<UserModel> login(String email, String password) async {
@@ -20,6 +21,19 @@ class AuthRepository {
       }
 
       throw RestException(message);
+    }
+  }
+
+  Future<void> saveUser(RegisterInputModel registerInputModel) async {
+    try {
+      await Dio().post('http://192.168.1.190:8888/user', data: {
+        'name': registerInputModel.name,
+        'email': registerInputModel.email,
+        'password': registerInputModel.password,
+      });
+    } on DioError catch (e) {
+      print(e);
+      throw RestException('Erro ao registrear usuário');
     }
   }
 }

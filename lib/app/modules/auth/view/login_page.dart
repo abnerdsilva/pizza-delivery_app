@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:pizza_delivery_app/app/modules/auth/controller/login_controller.dart';
+import 'package:pizza_delivery_app/app/modules/home/view/register_page.dart';
 import 'package:pizza_delivery_app/app/modules/splash/view/splash_page.dart';
 import 'package:pizza_delivery_app/app/shared/components/pizza_delivery_button.dart';
 import 'package:pizza_delivery_app/app/shared/components/pizza_delivery_input.dart';
@@ -62,6 +63,7 @@ class _LoginContentState extends State<LoginContent>
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 10),
         Image.asset(
           'assets/images/logo.png',
           width: 250,
@@ -126,7 +128,9 @@ class _LoginContentState extends State<LoginContent>
                   ),
                   SizedBox(height: 50),
                   FlatButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(RegisterPage.router);
+                    },
                     child: Text(
                       'Cadastre-se',
                       style: TextStyle(

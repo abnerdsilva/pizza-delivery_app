@@ -13,12 +13,13 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
         child: FlatButton(
-            onPressed: () {
-              SharedPreferences.getInstance().then((sp) => sp.clear());
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil(SplashPage.router, (route) => false);
-            },
-            child: null),
+          onPressed: () {
+            SharedPreferences.getInstance().then((sp) => sp.clear());
+            Navigator.of(context)
+                .pushNamedAndRemoveUntil(SplashPage.router, (route) => false);
+          },
+          child: Text('Sair'),
+        ),
       ),
     );
   }
